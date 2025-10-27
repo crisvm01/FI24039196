@@ -13,26 +13,36 @@ public class TheStack<Type> implements TheStackInterface<Type> {
     }
 
     public Boolean push(Type item) {
-        var available = _stack.size() < _capacity;
+        boolean available = _stack.size() < _capacity;
         if (available) {
-            push(item);
+            _stack.push(item);
+            return true;
+        } else{
+         return available;   
         }
-        return available;
     }
 
     public Type pop() {
-        return _stack.pop();
+        if (_stack.isEmpty()){
+            return null;
+        }
+        else{
+            return _stack.pop();}
     }
 
     public Type peek() {
-        return _stack.peek();
+        if(_stack.isEmpty()){
+            return null;
+        }
+        else{
+            return _stack.peek();}
     }
 
-    public boolean empty() {
+    public Boolean empty() {
         return _stack.isEmpty();
     }
 
-    public int size() {
+    public Integer size() {
         return _stack.size();
     }
 
