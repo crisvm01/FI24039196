@@ -65,7 +65,7 @@ public class BinTreeIntArray {
             if (i>= _tree.length) continue;
             if (_tree[i] == null) continue;
 
-           System.out.println(_tree[i]+ " ");
+           System.out.print(_tree[i]+ " ");
 
            int right = 2*i+2;
            int left = 2*i+1;
