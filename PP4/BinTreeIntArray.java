@@ -39,6 +39,7 @@ public class BinTreeIntArray {
 
     public void inOrderTraversal() { // left -> root -> right
         System.out.print(" ↳ inOrderTraversal → ");
+        
         var stack = new Stack<Integer>();
         var index = 0;
         while (!stack.isEmpty() || (index < _tree.length && _tree[index] != null)) {
@@ -87,18 +88,16 @@ public class BinTreeIntArray {
         Stack<Integer> stack1 = new Stack<>();
         Stack<Integer> stack2 = new Stack<>();
 
-        stack1.push(0);
+        if(_tree[0] != null){
+            stack1.push(0);
+        }
 
         while(!stack1.isEmpty()){
             int i = stack1.pop();
-
-            if(i >= _tree.length) continue;
-            if(_tree[i] == null) continue;
-
             stack2.push(i);
 
-            int right = 2*i+1;
-            int left = 2*i+2;
+            int left = 2*i+1;
+            int right = 2*i+2;
 
             if(left >= _tree.length && _tree[left] != null ){
                 stack1.push(left);
